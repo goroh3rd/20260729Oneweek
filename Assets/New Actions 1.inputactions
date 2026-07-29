@@ -1,0 +1,35 @@
+{
+    "version": 1,
+    "name": "New Actions 1",
+    "maps": [
+        {
+            "name": "ThrowPoint",
+            "id": "264b42c2-2c0d-4ebc-9184-c936d06b0525",
+            "actions": [
+                {
+                    "name": "Throw",
+                    "type": "Button",
+                    "id": "9c75bf97-b78f-4b5d-9e1d-17061905106e",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "89147f0e-b82e-489c-912b-fd64015753b1",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Throw",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

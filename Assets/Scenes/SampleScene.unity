@@ -340,9 +340,124 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2094028683
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2094028684}
+  - component: {fileID: 2094028685}
+  - component: {fileID: 2094028686}
+  m_Layer: 0
+  m_Name: ThrowPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2094028684
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2094028683}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -7.75, y: -3.85, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2094028685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2094028683}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 005dadee35745da47a1f38ed2ae07d61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RockThrower
+  throwForce: 22.07
+  rockPrefab: {fileID: 5991965244082481134, guid: 439384f7954dd024d903853d4e7eac3c, type: 3}
+  rockSprites:
+  - {fileID: 473947219574349775, guid: db86f6a0a9e5b404cabb6aa0d76eeff4, type: 3}
+  - {fileID: 4390033149433182506, guid: 6b3be5129b07fb74687fae3541030ea8, type: 3}
+  - {fileID: -8896454144639756399, guid: d767841c79dce3d4785a06189e5ccf97, type: 3}
+  - {fileID: -2130380498941829248, guid: 67483fe9875d5d84aae5a2142af4833b, type: 3}
+  - {fileID: -297433407879295485, guid: a25c4cebf8fd38d46b2ad81bafc2f0bd, type: 3}
+  - {fileID: 5172045672896066242, guid: 694a6f5e8b7903e4dbc50f3c1249de2e, type: 3}
+  - {fileID: 4785234080005988629, guid: 177bcdc04798778428b0af51a357f8e8, type: 3}
+  - {fileID: 2241294494334263639, guid: 802950261dff135429f0f3416ec98eb8, type: 3}
+  - {fileID: 8936843092524816820, guid: d9765aa3c3c220f499c226115b24cbf3, type: 3}
+  - {fileID: -3347493423390016353, guid: 68f85633ce6e5c54783f642f5be886ae, type: 3}
+  - {fileID: -3974227667324617782, guid: 05ec37975581fb34b8874585f556ba55, type: 3}
+  - {fileID: -1593003379833268819, guid: 4b3d15a99c88ae14db700e381c05f8df, type: 3}
+  - {fileID: -909773206131432771, guid: e77ac84a380c3b747be124760f639218, type: 3}
+  - {fileID: 2432610938682698816, guid: f0fbdaa3c9450c14f8e379c08959e33c, type: 3}
+  - {fileID: 8547768894746403550, guid: 13605daf499093849861a8d086064e2f, type: 3}
+  - {fileID: -8520851482953380642, guid: abf76b16986cdd948a97c23fedd5adbc, type: 3}
+  - {fileID: 5055954490115241293, guid: 4fe110ff5bd09b344a0d697db706da6b, type: 3}
+  - {fileID: -5408113178520130122, guid: 7fd3c01d7ab73ab4c949523d755f8167, type: 3}
+  - {fileID: 8811262814318585880, guid: ac7d0d5af8d96664091b63fc5760354e, type: 3}
+  - {fileID: 87846718073597740, guid: 86325e84a2e47d74f95304ad56c34041, type: 3}
+--- !u!114 &2094028686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2094028683}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.InputSystem::UnityEngine.InputSystem.PlayerInput
+  m_Actions: {fileID: -944628639613478452, guid: d7b1fef161509cc4daa52e21029a718a, type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2094028685}
+        m_TargetAssemblyTypeName: RockThrower, Assembly-CSharp
+        m_MethodName: Throw
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 9c75bf97-b78f-4b5d-9e1d-17061905106e
+    m_ActionName: 'ThrowPoint/Throw[/Mouse/leftButton]'
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: ThrowPoint
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 519420031}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 519420032}
   - {fileID: 619394802}
+  - {fileID: 2094028684}
