@@ -12,7 +12,6 @@ public class TimeKeeper : MonoBehaviour
     public bool CastlePhase { get; private set; } = false;
     public void StartGame()
     {
-        if (RockPhase) return;
         TimeRemaining = _timeLimit;
         RockPhase = true;
         CastlePhase = false;
@@ -25,17 +24,18 @@ public class TimeKeeper : MonoBehaviour
             if (TimeRemaining <= 0)
             {
                 TimeRemaining = 0;
+                RockPhase = false;
+
                 // この辺でタイムアップの音を鳴らす
-                DoWithDelay(_phaseDuration, () =>
+                StartCoroutine(DoWithDelay(_phaseDuration, () =>
                 {
                     ChangeToCastlePhase();
-                });
+                }));
             }
         }
     }
     private void ChangeToCastlePhase()
     {
-        RockPhase = false;
         CastlePhase = true;
     }
     private IEnumerator DoWithDelay(float delay, System.Action action)

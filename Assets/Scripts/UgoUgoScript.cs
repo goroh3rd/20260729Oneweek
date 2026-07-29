@@ -9,10 +9,10 @@ public class UgoUgoScript : MonoBehaviour
     [SerializeField] private SpriteRenderer _spriteRenderer;
     private int index = 0;
     private Coroutine _changeSpriteCoroutine;
-    private void Start()
-    {
-        StartAnimation();
-    }
+    // private void Start()
+    // {
+    //     StartAnimation();
+    // }
     private void OnEnable()
     {
         StartAnimation();

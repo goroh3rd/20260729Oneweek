@@ -149,6 +149,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TimeKeeper
   _timeLimit: 15
+  _phaseDuration: 0
 --- !u!4 &23460709
 Transform:
   m_ObjectHideFlags: 0
@@ -1790,8 +1791,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 70423223
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 1079258508757878036, guid: 83f2e38e9c32dcf48a9ba31e7269117f, type: 3}
@@ -3167,7 +3168,7 @@ MonoBehaviour:
   _prepareTime: 0.5
   _throwInterval: 0.2
   _throwCount: 80
-  _throwForce: 12
+  _throwForce: 14
   _rockPrefab: {fileID: 5991965244082481134, guid: 439384f7954dd024d903853d4e7eac3c, type: 3}
   _rockSprites: []
   _parabolaDrower: {fileID: 2094028688}
@@ -3277,8 +3278,8 @@ LineRenderer:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 0
-        value: 0.11764717
+        time: 0.016460419
+        value: 0.029413223
         inSlope: 0
         outSlope: 0
         tangentMode: 0
