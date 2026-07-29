@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6140664298935888516}
   - component: {fileID: 8301534054333360546}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: RockImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -82,7 +82,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 473947219574349775, guid: db86f6a0a9e5b404cabb6aa0d76eeff4, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.149, g: 0.178, b: 0.234, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -102,9 +102,10 @@ GameObject:
   - component: {fileID: 4332559293527188975}
   - component: {fileID: 8423677992155504927}
   - component: {fileID: 5991965244082481134}
-  m_Layer: 0
+  - component: {fileID: 4678230374366079986}
+  m_Layer: 7
   m_Name: RockCol
-  m_TagString: Untagged
+  m_TagString: Rocks
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -119,7 +120,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.01, y: 0.05, z: 0}
-  m_LocalScale: {x: 0.16, y: 0.16, z: 0.16}
+  m_LocalScale: {x: 0.13, y: 0.13, z: 0.13}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 6140664298935888516}
@@ -170,8 +171,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 115526181
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 473947219574349775, guid: db86f6a0a9e5b404cabb6aa0d76eeff4, type: 3}
@@ -196,8 +197,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a673f12eb90f68419f946d9a070f7f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RockBehaviour
-  spriteRenderer: {fileID: 8423677992155504927}
-  rockSprites:
+  _spriteRenderer: {fileID: 8423677992155504927}
+  _childSpriteRenderer: {fileID: 8301534054333360546}
+  _rockSprites:
   - {fileID: 473947219574349775, guid: db86f6a0a9e5b404cabb6aa0d76eeff4, type: 3}
   - {fileID: 4390033149433182506, guid: 6b3be5129b07fb74687fae3541030ea8, type: 3}
   - {fileID: -8896454144639756399, guid: d767841c79dce3d4785a06189e5ccf97, type: 3}
@@ -218,3 +220,32 @@ MonoBehaviour:
   - {fileID: -5408113178520130122, guid: 7fd3c01d7ab73ab4c949523d755f8167, type: 3}
   - {fileID: 8811262814318585880, guid: ac7d0d5af8d96664091b63fc5760354e, type: 3}
   - {fileID: 87846718073597740, guid: 86325e84a2e47d74f95304ad56c34041, type: 3}
+  _rockPhysicsMaterial: {fileID: 6200000, guid: 91fcea43b1dafc6498d36fd5a44cfad9, type: 2}
+  _rb: {fileID: 4678230374366079986}
+--- !u!50 &4678230374366079986
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8462053656620284792}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 20
+  m_GravityScale: 1
+  m_Material: {fileID: 6200000, guid: 91fcea43b1dafc6498d36fd5a44cfad9, type: 2}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

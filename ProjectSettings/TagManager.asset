@@ -2,8 +2,10 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!78 &1
 TagManager:
-  serializedVersion: 2
-  tags: []
+  serializedVersion: 3
+  tags:
+  - Ground
+  - Rocks
   layers:
   - Default
   - TransparentFX
@@ -11,8 +13,8 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
+  - Ground
+  - Rocks
   - 
   - 
   - 
@@ -41,3 +43,26 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Ground
+    uniqueID: 1314352605
+    locked: 0
+  - name: Ashigaru
+    uniqueID: 70423223
+    locked: 0
+  - name: Jingasa
+    uniqueID: 4169891789
+    locked: 0
+  - name: Line
+    uniqueID: 347060923
+    locked: 0
+  - name: Letters
+    uniqueID: 2035524981
+    locked: 0
+  - name: Rocks
+    uniqueID: 115526181
+    locked: 0
+  - name: Castle
+    uniqueID: 3219698485
+    locked: 0
+  m_RenderingLayers:
+  - Default
