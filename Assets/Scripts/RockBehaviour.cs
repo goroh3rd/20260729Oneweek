@@ -13,6 +13,12 @@ public class RockBehaviour : MonoBehaviour, IThrowable, IGeneratable
     private PolygonCollider2D _polygonCollider;
     public void Init()
     {
+        // Set SpriteRenderer properties
+        _spriteRenderer.sprite = _rockSprites[Random.Range(0, _rockSprites.Count)];
+        _childSpriteRenderer.sprite = _spriteRenderer.sprite;
+        float c = Random.Range(0.1f, 0.5f);
+        _childSpriteRenderer.color = new Color(c, c, c);
+
         GameObject rockChild = transform.GetChild(0).gameObject;
         _polygonCollider = this.gameObject.AddComponent<PolygonCollider2D>();
 
@@ -23,11 +29,6 @@ public class RockBehaviour : MonoBehaviour, IThrowable, IGeneratable
         this.transform.localScale = this.transform.localScale * Random.Range(0.8f, 1.2f);
         this.transform.rotation = Quaternion.Euler(0, 0, Random.Range(0f, 360f));
 
-        // Set SpriteRenderer properties
-        _spriteRenderer.sprite = _rockSprites[Random.Range(0, _rockSprites.Count)];
-        _childSpriteRenderer.sprite = _spriteRenderer.sprite;
-        float c = Random.Range(0.1f, 0.5f);
-        _childSpriteRenderer.color = new Color(c, c, c);
 
         // Set the rock to kinematic initially
         _rb.bodyType = RigidbodyType2D.Kinematic;
@@ -62,6 +63,7 @@ public class RockBehaviour : MonoBehaviour, IThrowable, IGeneratable
         _polygonCollider.enabled = true;
         _rb.AddForce(force, ForceMode2D.Impulse);
     }
+    public GameObject GetGameObject() => gameObject;
 
     private bool IsOnScene()
     {

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6140664298935888516}
   - component: {fileID: 8301534054333360546}
   m_Layer: 7
-  m_Name: RockImage
+  m_Name: CastleImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27,7 +27,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.3, y: 1.3, z: 1.3}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 4332559293527188975}
@@ -77,12 +77,12 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 115526181
-  m_SortingLayer: 6
+  m_SortingLayerID: -1075268811
+  m_SortingLayer: 7
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 473947219574349775, guid: db86f6a0a9e5b404cabb6aa0d76eeff4, type: 3}
-  m_Color: {r: 0.149, g: 0.178, b: 0.234, a: 1}
+  m_Sprite: {fileID: 8115064179455076264, guid: 336dd680726b90148824d823b4f0985c, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -101,10 +101,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4332559293527188975}
   - component: {fileID: 8423677992155504927}
-  - component: {fileID: 5991965244082481134}
+  - component: {fileID: 7550062703925889477}
   - component: {fileID: 4678230374366079986}
   m_Layer: 7
-  m_Name: RockCol
+  m_Name: CastleCol
   m_TagString: Rocks
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -120,7 +120,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.01, y: 0.05, z: 0}
-  m_LocalScale: {x: 0.13, y: 0.13, z: 0.13}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 6140664298935888516}
@@ -171,11 +171,11 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 115526181
-  m_SortingLayer: 6
+  m_SortingLayerID: -1075268811
+  m_SortingLayer: 7
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 473947219574349775, guid: db86f6a0a9e5b404cabb6aa0d76eeff4, type: 3}
+  m_Sprite: {fileID: 8115064179455076264, guid: 336dd680726b90148824d823b4f0985c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
   m_FlipY: 0
@@ -185,7 +185,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!114 &5991965244082481134
+--- !u!114 &7550062703925889477
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -194,33 +194,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 8462053656620284792}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a673f12eb90f68419f946d9a070f7f3, type: 3}
+  m_Script: {fileID: 11500000, guid: e1f5e8631fa6a6743b180ae634e5a1a6, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::RockBehaviour
+  m_EditorClassIdentifier: Assembly-CSharp::CastleBehaviour
   _spriteRenderer: {fileID: 8423677992155504927}
   _childSpriteRenderer: {fileID: 8301534054333360546}
-  _rockSprites:
-  - {fileID: 473947219574349775, guid: db86f6a0a9e5b404cabb6aa0d76eeff4, type: 3}
-  - {fileID: 4390033149433182506, guid: 6b3be5129b07fb74687fae3541030ea8, type: 3}
-  - {fileID: -8896454144639756399, guid: d767841c79dce3d4785a06189e5ccf97, type: 3}
-  - {fileID: -2130380498941829248, guid: 67483fe9875d5d84aae5a2142af4833b, type: 3}
-  - {fileID: -297433407879295485, guid: a25c4cebf8fd38d46b2ad81bafc2f0bd, type: 3}
-  - {fileID: 5172045672896066242, guid: 694a6f5e8b7903e4dbc50f3c1249de2e, type: 3}
-  - {fileID: 4785234080005988629, guid: 177bcdc04798778428b0af51a357f8e8, type: 3}
-  - {fileID: 2241294494334263639, guid: 802950261dff135429f0f3416ec98eb8, type: 3}
-  - {fileID: 8936843092524816820, guid: d9765aa3c3c220f499c226115b24cbf3, type: 3}
-  - {fileID: -3347493423390016353, guid: 68f85633ce6e5c54783f642f5be886ae, type: 3}
-  - {fileID: -3974227667324617782, guid: 05ec37975581fb34b8874585f556ba55, type: 3}
-  - {fileID: -1593003379833268819, guid: 4b3d15a99c88ae14db700e381c05f8df, type: 3}
-  - {fileID: -909773206131432771, guid: e77ac84a380c3b747be124760f639218, type: 3}
-  - {fileID: 2432610938682698816, guid: f0fbdaa3c9450c14f8e379c08959e33c, type: 3}
-  - {fileID: 8547768894746403550, guid: 13605daf499093849861a8d086064e2f, type: 3}
-  - {fileID: -8520851482953380642, guid: abf76b16986cdd948a97c23fedd5adbc, type: 3}
-  - {fileID: 5055954490115241293, guid: 4fe110ff5bd09b344a0d697db706da6b, type: 3}
-  - {fileID: -5408113178520130122, guid: 7fd3c01d7ab73ab4c949523d755f8167, type: 3}
-  - {fileID: 8811262814318585880, guid: ac7d0d5af8d96664091b63fc5760354e, type: 3}
-  - {fileID: 87846718073597740, guid: 86325e84a2e47d74f95304ad56c34041, type: 3}
-  _rockPhysicsMaterial: {fileID: 6200000, guid: 91fcea43b1dafc6498d36fd5a44cfad9, type: 2}
+  _castleSprites:
+  - {fileID: 8115064179455076264, guid: 336dd680726b90148824d823b4f0985c, type: 3}
+  - {fileID: -3292698637720659367, guid: 5a93df2aa8a950c4c8548dfd796a2a8c, type: 3}
+  _castlePhysicsMaterial: {fileID: 6200000, guid: 36873b532f7e34549a1d855945bcd6bc, type: 2}
   _rb: {fileID: 4678230374366079986}
 --- !u!50 &4678230374366079986
 Rigidbody2D:
@@ -236,9 +218,9 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDamping: 0
-  m_AngularDamping: 20
+  m_AngularDamping: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 6200000, guid: 91fcea43b1dafc6498d36fd5a44cfad9, type: 2}
+  m_Material: {fileID: 6200000, guid: 36873b532f7e34549a1d855945bcd6bc, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
