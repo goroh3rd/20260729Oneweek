@@ -9,6 +9,7 @@ public class CastleBehaviour : MonoBehaviour, IThrowable, IGeneratable
     [SerializeField] private List<Sprite> _castleSprites;
     [SerializeField] private PhysicsMaterial2D _castlePhysicsMaterial;
     [SerializeField] private Rigidbody2D _rb;
+    [SerializeField] private AudioSource _audioSource;
     private PolygonCollider2D _polygonCollider;
     public CastlePart Part { get; private set; } = CastlePart.Under;
     public enum CastlePart
@@ -51,6 +52,7 @@ public class CastleBehaviour : MonoBehaviour, IThrowable, IGeneratable
             this._rb.linearVelocity = Vector2.zero;
             this._rb.angularVelocity = 0f;
             // _rb.bodyType = RigidbodyType2D.Kinematic;
+            if (this.gameObject.tag != "Ground") _audioSource.Play();
             this.tag = "Ground";
         }
     }
