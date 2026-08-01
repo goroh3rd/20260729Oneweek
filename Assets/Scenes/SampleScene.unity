@@ -5546,7 +5546,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ParabolaDrower
   _line: {fileID: 2094028687}
-  _pointCount: 40
+  _pointCount: 100
   _timeStep: 0.05
 --- !u!82 &2094028689
 AudioSource:
