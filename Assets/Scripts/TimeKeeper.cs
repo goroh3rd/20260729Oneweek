@@ -5,6 +5,7 @@ using System.Collections.Generic;
 public class TimeKeeper : MonoBehaviour
 {
     [SerializeField] private float _timeLimit;
+    public float TimeLimit => _timeLimit;
     [SerializeField] private float _phaseDuration;
     [SerializeField] private AudioSource _timeUpSound;
     public float TimeRemaining { get; private set; }

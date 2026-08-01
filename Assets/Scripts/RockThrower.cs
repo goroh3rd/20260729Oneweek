@@ -28,6 +28,8 @@ public class RockThrower : MonoBehaviour
         Throwables.Clear();
         _currentThrowable = GenerateRock();
         _throwCoroutine = StartCoroutine(StartThrow(_prepareTime));
+        // 録画開始
+        _recorder.StartRecording();
 
     }
     private void Update()
@@ -123,8 +125,7 @@ public class RockThrower : MonoBehaviour
             {
                 _currentThrowable = null;
                 _timeKeeper.EndCastlePhase();
-                // 録画開始
-                _recorder.StartRecording();
+
                 _parabolaDrower.ClearTrajectory();
                 StartCoroutine(StartMeasureHeight(6f));
             }

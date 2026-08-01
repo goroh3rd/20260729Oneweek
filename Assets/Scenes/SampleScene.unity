@@ -239,6 +239,10 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 6952193342124250734, guid: 2858feaa2fb3f554d970958cdea57fbd, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 68737729
+      objectReference: {fileID: 0}
     - target: {fileID: 7282006437656387779, guid: 2858feaa2fb3f554d970958cdea57fbd, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.86
@@ -303,7 +307,10 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 9018540275582638595, guid: 2858feaa2fb3f554d970958cdea57fbd, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1458793678}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2543015677852794158, guid: 2858feaa2fb3f554d970958cdea57fbd, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 289842792}
   m_SourcePrefab: {fileID: 100100000, guid: 2858feaa2fb3f554d970958cdea57fbd, type: 3}
 --- !u!1 &23460707
 GameObject:
@@ -622,6 +629,26 @@ MonoBehaviour:
   - {fileID: -1362236758716664498, guid: c1137695dadf22d45be281f7d036e3df, type: 3}
   - {fileID: 7602013414706562080, guid: 7951b549ce3e1eb448b56ad41b8086b7, type: 3}
   _spriteRenderer: {fileID: 222632656}
+--- !u!1 &289842788 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2543015677852794158, guid: 2858feaa2fb3f554d970958cdea57fbd, type: 3}
+  m_PrefabInstance: {fileID: 12723725}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &289842792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 289842788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Outline
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
+  m_EffectDistance: {x: 5, y: -5}
+  m_UseGraphicAlpha: 1
 --- !u!1 &309755497
 GameObject:
   m_ObjectHideFlags: 0
@@ -1657,7 +1684,7 @@ MonoBehaviour:
   m_Intensity: 1
   m_LightVolumeIntensity: 1
   m_LightVolumeEnabled: 0
-  m_ApplyToSortingLayers: 00000000dd6d574e25cae20635b3e8bf75a55379bbbaaf14b7923204cd7f8bf8552327d7
+  m_ApplyToSortingLayers: 00000000dd6d574e25cae20635b3e8bf75a55379bbbaaf14b7923204cd7f8bf8552327d7c1da1804
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -2015,6 +2042,17 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &962137892 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2940997916824526339, guid: 2858feaa2fb3f554d970958cdea57fbd, type: 3}
+  m_PrefabInstance: {fileID: 12723725}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af4667c42da1c404984846f4ffc25ec7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CanvasRecorder.Samples.CanvasRecorder
 --- !u!1 &976871703
 GameObject:
   m_ObjectHideFlags: 0
@@ -2249,6 +2287,7 @@ GameObject:
   - component: {fileID: 992950383}
   - component: {fileID: 992950382}
   - component: {fileID: 992950381}
+  - component: {fileID: 992950384}
   m_Layer: 5
   m_Name: Retry
   m_TagString: Untagged
@@ -2322,7 +2361,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 992950382}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 992950384}
+        m_TargetAssemblyTypeName: Retry, Assembly-CSharp
+        m_MethodName: OnRetryButtonClicked
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &992950382
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2361,6 +2412,69 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 992950379}
   m_CullTransparentMesh: 1
+--- !u!114 &992950384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 992950379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8092937b1db965242a350f5e9016cb97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Retry
+--- !u!1 &1006249958
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1006249960}
+  - component: {fileID: 1006249959}
+  m_Layer: 0
+  m_Name: GunzeuPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1006249959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1006249958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d53831f7099918408a6d50ac1ac7335, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GunzeuSpowner
+  _gunzeuPrefab: {fileID: -6845004423296554460, guid: 34a6ef11705087443b5be4ef725c6fd9, type: 3}
+  _timeKeeper: {fileID: 23460708}
+  _spawnPosition: {x: 9.77, y: -3.76}
+  _spawnPositionRandomNess: {x: 0, y: 0.3}
+  _moveTo: {x: -9, y: 0}
+  _spawnInterval: 0.4
+  _spawnIntervalRandomNess: 0.1
+--- !u!4 &1006249960
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1006249958}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 9.77, y: -3.76, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1038971844
 GameObject:
   m_ObjectHideFlags: 0
@@ -3742,7 +3856,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 1314352605
   m_SortingLayer: 2
-  m_SortingOrder: 2
+  m_SortingOrder: 5
   m_MaskInteraction: 0
   m_Sprite: {fileID: 6682738439518977790, guid: 11434affdf7d16048a742808329f1d64, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -5160,7 +5274,7 @@ MonoBehaviour:
   _throwSound: {fileID: 2094028689}
   _timeKeeper: {fileID: 23460708}
   _scoreShower: {fileID: 1038971845}
-  _recorder: {fileID: 0}
+  _recorder: {fileID: 962137892}
 --- !u!114 &2094028686
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5541,3 +5655,4 @@ SceneRoots:
   - {fileID: 1038971846}
   - {fileID: 30767345}
   - {fileID: 12723725}
+  - {fileID: 1006249960}

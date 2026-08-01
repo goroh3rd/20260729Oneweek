@@ -67,5 +67,8 @@ TagManager:
   - name: Castle
     uniqueID: 3219698485
     locked: 0
+  - name: UI
+    uniqueID: 68737729
+    locked: 0
   m_RenderingLayers:
   - Default
