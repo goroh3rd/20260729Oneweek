@@ -157,9 +157,6 @@ public class RockThrower : MonoBehaviour
             yield return null;
         }
 
-        // 録画停止
-        _recorder.StopRecording();
-        _recorder.OpenPreview();
 
         float maxHeight = heightMeasure.MeasureMaxHeight(Throwables);
         float finalScore = Mathf.Max(maxHeight + 5f, 0f);
@@ -167,6 +164,11 @@ public class RockThrower : MonoBehaviour
         _scoreShower.ShowScore(finalScore);
 
         UnityroomApiClient.Instance.SendScore(1, finalScore, ScoreboardWriteMode.HighScoreDesc);
+
+        yield return new WaitForSeconds(2f); // Wait for 2 seconds before stopping the recording
+        // 録画停止
+        _recorder.StopRecording();
+        _recorder.OpenPreview();
     }
     private float GetAngleToMouse()
     {
