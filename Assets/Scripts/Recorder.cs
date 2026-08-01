@@ -6,13 +6,13 @@ using UnityEngine.UI;
 namespace CanvasRecorder.Samples
 {
     /// <summary>
-    /// CanvasRecorder ‚ÌŽg‚¢•û‚ðˆê’Ê‚èŽ¦‚·ƒTƒ“ƒvƒ‹B
-    /// ˜^‰æŠJŽn ¨ ’âŽ~ ¨ ƒvƒŒƒrƒ…[ ¨ •Û‘¶ / ”jŠü ‚Ì—¬‚ê‚ð IMGUI ‚Å‘g‚ñ‚Å‚¢‚éB
-    /// ŽÀÛ‚ÌƒvƒƒWƒFƒNƒg‚Å‚Í uGUI ‚È‚Ç‚É’u‚«Š·‚¦‚ÄŽg‚¤‚±‚Æ‚ð‘z’è‚µ‚Ä‚¢‚éB
+    /// CanvasRecorder ï¿½ÌŽgï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê‚èŽ¦ï¿½ï¿½ï¿½Tï¿½ï¿½ï¿½vï¿½ï¿½ï¿½B
+    /// ï¿½^ï¿½ï¿½Jï¿½n ï¿½ï¿½ ï¿½ï¿½~ ï¿½ï¿½ ï¿½vï¿½ï¿½ï¿½rï¿½ï¿½ï¿½[ ï¿½ï¿½ ï¿½Û‘ï¿½ / ï¿½jï¿½ï¿½ ï¿½Ì—ï¿½ï¿½ï¿½ï¿½ IMGUI ï¿½Å‘gï¿½ï¿½Å‚ï¿½ï¿½ï¿½B
+    /// ï¿½ï¿½ï¿½Û‚Ìƒvï¿½ï¿½ï¿½Wï¿½Fï¿½Nï¿½gï¿½Å‚ï¿½ uGUI ï¿½È‚Ç‚É’uï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÄŽgï¿½ï¿½ï¿½ï¿½ï¿½Æ‚ï¿½zï¿½è‚µï¿½Ä‚ï¿½ï¿½ï¿½B
     ///
-    /// ’ˆÓ: ƒrƒ‹ƒh‚µ‚½ƒuƒ‰ƒEƒUã‚Å‚Ì‚Ý“®ì‚·‚éBƒGƒfƒBƒ^‚Ì Play ‚Å‚Í
-    /// <see cref="ScreenRecorder"/> ‚ÌŠeƒƒ\ƒbƒh‚Í‰½‚à‚¹‚¸ false ‚ð•Ô‚·B
-    /// ‚Ü‚½‘g‚Ýž‚ÝƒtƒHƒ“ƒg‚É“ú–{ŒêƒOƒŠƒt‚ª–³‚¢‚½‚ßA‰æ–Ê‚Éo‚·•¶Žš—ñ‚Í ASCII ‚ÉŒÀ’è‚µ‚Ä‚¢‚éB
+    /// ï¿½ï¿½ï¿½ï¿½: ï¿½rï¿½ï¿½ï¿½hï¿½ï¿½ï¿½ï¿½ï¿½uï¿½ï¿½ï¿½Eï¿½Uï¿½ï¿½Å‚Ì‚Ý“ï¿½ï¿½ì‚·ï¿½ï¿½Bï¿½Gï¿½fï¿½Bï¿½^ï¿½ï¿½ Play ï¿½Å‚ï¿½
+    /// <see cref="ScreenRecorder"/> ï¿½ÌŠeï¿½ï¿½ï¿½\ï¿½bï¿½hï¿½Í‰ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ false ï¿½ï¿½Ô‚ï¿½ï¿½B
+    /// ï¿½Ü‚ï¿½ï¿½gï¿½Ýï¿½ï¿½Ýƒtï¿½Hï¿½ï¿½ï¿½gï¿½É“ï¿½ï¿½{ï¿½ï¿½Oï¿½ï¿½ï¿½tï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ßAï¿½ï¿½Ê‚Éoï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ASCII ï¿½ÉŒï¿½ï¿½è‚µï¿½Ä‚ï¿½ï¿½ï¿½B
     /// </summary>
     public class Recorder : MonoBehaviour
     {
@@ -25,14 +25,14 @@ namespace CanvasRecorder.Samples
         private long _readyBytes = -1;
         private string _previewError;
 
-        // ‰¹º‚ª˜^‰¹‚Å‚«‚Ä‚¢‚é‚©Šm”F‚·‚é‚½‚ß‚ÌAŽÀsŽž‚É¶¬‚·‚é 440Hz ‚Ìƒg[ƒ“B
+        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½^ï¿½ï¿½ï¿½Å‚ï¿½ï¿½Ä‚ï¿½ï¿½é‚©ï¿½mï¿½Fï¿½ï¿½ï¿½é‚½ï¿½ß‚ÌAï¿½ï¿½ï¿½sï¿½ï¿½ï¿½Éï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 440Hz ï¿½Ìƒgï¿½[ï¿½ï¿½ï¿½B
         private AudioSource _toneSource;
         private bool _includeAudio = true;
 
-        // ‰f‘œ‚Æ‰¹º‚ÌƒYƒŒ‚ðŽÀ‘ª‚·‚é‚½‚ß‚Ì“¯Šúƒ}[ƒJ[B
-        // ˆê’èŠÔŠu‚Åu‰æ–Ê‘S‘Ì‚Ì”’ƒtƒ‰ƒbƒVƒ…v‚Æu’Z‚¢ƒNƒŠƒbƒN‰¹v‚ð“¯‚¶ƒtƒŒ[ƒ€‚Å”­¶‚³‚¹‚éB
-        // •Û‘¶‚µ‚½ƒtƒ@ƒCƒ‹ã‚Åƒtƒ‰ƒbƒVƒ…‚ÆƒNƒŠƒbƒN‰¹‚ÌˆÊ’u‚ð”ä‚×‚ê‚ÎA
-        // ƒYƒŒ‚Ì‘å‚«‚³‚ÆA‚»‚ê‚ªˆê’è‚È‚Ì‚©ŽžŠÔ‚Æ‚Æ‚à‚ÉL‚ª‚é‚Ì‚©‚ª•ª‚©‚éB
+        // ï¿½fï¿½ï¿½ï¿½Æ‰ï¿½ï¿½ï¿½ï¿½ÌƒYï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½é‚½ï¿½ß‚Ì“ï¿½ï¿½ï¿½ï¿½}ï¿½[ï¿½Jï¿½[ï¿½B
+        // ï¿½ï¿½ï¿½ÔŠuï¿½Åuï¿½ï¿½Ê‘Sï¿½Ì‚Ì”ï¿½ï¿½tï¿½ï¿½ï¿½bï¿½Vï¿½ï¿½ï¿½vï¿½Æuï¿½Zï¿½ï¿½ï¿½Nï¿½ï¿½ï¿½bï¿½Nï¿½ï¿½ï¿½vï¿½ð“¯‚ï¿½ï¿½tï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½Å”ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½B
+        // ï¿½Û‘ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½tï¿½@ï¿½Cï¿½ï¿½ï¿½ï¿½Åƒtï¿½ï¿½ï¿½bï¿½Vï¿½ï¿½ï¿½ÆƒNï¿½ï¿½ï¿½bï¿½Nï¿½ï¿½ï¿½ÌˆÊ’uï¿½ï¿½ï¿½×‚ï¿½ÎA
+        // ï¿½Yï¿½ï¿½ï¿½Ì‘å‚«ï¿½ï¿½ï¿½ÆAï¿½ï¿½ï¿½ê‚ªï¿½ï¿½ï¿½È‚Ì‚ï¿½ï¿½ï¿½ï¿½Ô‚Æ‚Æ‚ï¿½ï¿½ÉLï¿½ï¿½ï¿½ï¿½Ì‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½B
         private AudioSource _clickSource;
         private bool _syncMarkers;
         private float _markerTimer;
@@ -41,7 +41,7 @@ namespace CanvasRecorder.Samples
 
         private const float MarkerIntervalSeconds = 2f;
 
-        // X ‚Ö“Še‚·‚é‚Æ‚«‚Ì–{•¶‚Æ URLBŽÀÛ‚ÌƒvƒƒWƒFƒNƒg‚Å‚Í·‚µ‘Ö‚¦‚ÄŽg‚¤B
+        // X ï¿½Ö“ï¿½ï¿½eï¿½ï¿½ï¿½ï¿½Æ‚ï¿½ï¿½Ì–{ï¿½ï¿½ï¿½ï¿½ URLï¿½Bï¿½ï¿½ï¿½Û‚Ìƒvï¿½ï¿½ï¿½Wï¿½Fï¿½Nï¿½gï¿½Å‚Íï¿½ï¿½ï¿½ï¿½Ö‚ï¿½ï¿½ÄŽgï¿½ï¿½ï¿½B
         private const string PostText = "Recorded with CanvasRecorder";
         private const string GameUrl = "";
 
@@ -63,9 +63,9 @@ namespace CanvasRecorder.Samples
 
             if (_screenRecorder == null)
             {
-                Debug.LogError($"{nameof(ScreenRecorder)} ‚ªƒV[ƒ“‚É‘¶Ý‚µ‚Ü‚¹‚ñB" +
-                               $"\"{ScreenRecorder.GameObjectName}\" ‚Æ‚¢‚¤–¼‘O‚Ì GameObject ‚ðì‚èA" +
-                               $"{nameof(ScreenRecorder)} ‚ðƒAƒ^ƒbƒ`‚µ‚Ä‚­‚¾‚³‚¢B");
+                Debug.LogError($"{nameof(ScreenRecorder)} ï¿½ï¿½ï¿½Vï¿½[ï¿½ï¿½ï¿½É‘ï¿½ï¿½Ý‚ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½B" +
+                               $"\"{ScreenRecorder.GameObjectName}\" ï¿½Æ‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Oï¿½ï¿½ GameObject ï¿½ï¿½ï¿½ï¿½ï¿½A" +
+                               $"{nameof(ScreenRecorder)} ï¿½ï¿½ï¿½Aï¿½^ï¿½bï¿½`ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½B");
                 enabled = false;
             }
         }
@@ -96,8 +96,8 @@ namespace CanvasRecorder.Samples
         {
             _shareStatus = result.ToString();
 
-            // ‹¤—L‚Å‚«‚È‚¢ŠÂ‹«‚Å‚ÍA•Û‘¶‚³‚¹‚½‚¤‚¦‚Å X ‚Ì“Še‰æ–Ê‚ðŠJ‚­B
-            // “®‰æ‚Ì“Y•t‚Íƒ†[ƒU[‚ÌŽè“®‘€ì‚É‚È‚éB
+            // ï¿½ï¿½ï¿½Lï¿½Å‚ï¿½ï¿½È‚ï¿½ï¿½Â‹ï¿½ï¿½Å‚ÍAï¿½Û‘ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ X ï¿½Ì“ï¿½ï¿½eï¿½ï¿½Ê‚ï¿½ï¿½Jï¿½ï¿½ï¿½B
+            // ï¿½ï¿½ï¿½ï¿½Ì“Yï¿½tï¿½Íƒï¿½ï¿½[ï¿½Uï¿½[ï¿½ÌŽè“®ï¿½ï¿½ï¿½ï¿½É‚È‚ï¿½B
             if (result == RecordingShareResult.Unsupported) FallBackToDownloadAndIntent();
         }
 
@@ -113,9 +113,10 @@ namespace CanvasRecorder.Samples
 
         private void Update()
         {
+            /*
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                // ƒXƒy[ƒXƒL[‚ª‰Ÿ‚³‚ê‚½‚Æ‚«‚Ìˆ—‚ð‚±‚±‚É’Ç‰Á
+                // ï¿½Xï¿½yï¿½[ï¿½Xï¿½Lï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ê‚½ï¿½Æ‚ï¿½ï¿½Ìï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É’Ç‰ï¿½
                 if (_screenRecorder.IsRecording)
                 {
                     _screenRecorder.StopRecording();
@@ -144,6 +145,7 @@ namespace CanvasRecorder.Samples
             {
                 _statusTextMesh.text = $"IDLE  {Time.time:F1}s";
             }
+            */
         }
 
         IEnumerator OpenPreviewPanel()
@@ -180,10 +182,10 @@ namespace CanvasRecorder.Samples
         private void DrawRecorder(int width, int height)
         {
             /*
-            // ˜^‰æ‚³‚ê‚½‰f‘œ‚ª^‚Á•‚Å‚È‚¢‚±‚Æ‚ð”»•Ê‚Å‚«‚é‚æ‚¤A–¾‚é‚¢”wŒi‚ð•~‚­B
+            // ï¿½^ï¿½æ‚³ï¿½ê‚½ï¿½fï¿½ï¿½ï¿½ï¿½ï¿½^ï¿½ï¿½ï¿½ï¿½ï¿½Å‚È‚ï¿½ï¿½ï¿½ï¿½Æ‚ð”»•Ê‚Å‚ï¿½ï¿½ï¿½æ‚¤ï¿½Aï¿½ï¿½ï¿½é‚¢ï¿½wï¿½iï¿½ï¿½~ï¿½ï¿½ï¿½B
             DrawSolid(new Rect(0, 0, width, height), new Color(0.16f, 0.42f, 0.70f));
 
-            // “®‚«‚ª‚ ‚é‚±‚Æ‚ðŠm”F‚·‚é‚½‚ß‚Ì‰•œ‚·‚éƒo[B
+            // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½é‚±ï¿½Æ‚ï¿½ï¿½mï¿½Fï¿½ï¿½ï¿½é‚½ï¿½ß‚Ì‰ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½oï¿½[ï¿½B
             var t = Mathf.PingPong(Time.time * 0.35f, 1f);
             var boxSize = height * 0.18f;
             DrawSolid(new Rect(t * (width - boxSize), height * 0.45f, boxSize, boxSize), new Color(1f, 0.78f, 0.16f));
@@ -219,7 +221,7 @@ namespace CanvasRecorder.Samples
             var buttonHeight = height * 0.09f;
             var buttonY = height - height * 0.14f;
 
-            // ‰¹º‚Ü‚í‚è‚ÌƒgƒOƒ‹B˜^‰æ’†‚Å‚à‘€ì‚Å‚«‚é‚æ‚¤‚É‚µ‚Ä‚¨‚­B
+            // ï¿½ï¿½ï¿½ï¿½ï¿½Ü‚ï¿½ï¿½Ìƒgï¿½Oï¿½ï¿½ï¿½Bï¿½^ï¿½æ’†ï¿½Å‚ï¿½ï¿½ï¿½ï¿½ï¿½Å‚ï¿½ï¿½ï¿½æ‚¤ï¿½É‚ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½ï¿½B
             var toggleY = buttonY - buttonHeight - height * 0.02f;
             if (GUI.Button(new Rect(20, toggleY, buttonWidth, buttonHeight),
                     _toneSource.isPlaying ? "TONE: ON" : "TONE: OFF"))
@@ -259,7 +261,7 @@ namespace CanvasRecorder.Samples
                 _previewError = null;
             }
 
-            // ’âŽ~EƒvƒŒƒrƒ…[E•Û‘¶‚Í‚»‚ê‚¼‚ê“Æ—§‚µ‚½‘€ìB
+            // ï¿½ï¿½~ï¿½Eï¿½vï¿½ï¿½ï¿½rï¿½ï¿½ï¿½[ï¿½Eï¿½Û‘ï¿½ï¿½Í‚ï¿½ï¿½ê‚¼ï¿½ï¿½Æ—ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½B
             if (!hasRecording) return;
 
             if (GUI.Button(new Rect(30 + buttonWidth, buttonY, buttonWidth, buttonHeight), "PREVIEW"))
@@ -273,9 +275,9 @@ namespace CanvasRecorder.Samples
                 _screenRecorder.SaveRecording();
             }
 
-            // ‹¤—L‚Æu•Û‘¶ + “Še‰æ–Êv‚Í•Ê‚Ìƒ{ƒ^ƒ“‚É‚µ‚Ä‚¨‚­B
-            // ƒfƒXƒNƒgƒbƒv‚Ì‹¤—LƒV[ƒg‚É‚Í X ‚ª•À‚Î‚È‚¢‚½‚ßA•Ð•û‚¾‚¯‚¾‚Æs‚«Ž~‚Ü‚è‚É‚È‚éB
-            // ‚Ç‚¿‚ç‚àƒ†[ƒU[‚ÌƒNƒŠƒbƒN‚Ì’†‚ÅŠ®Œ‹‚³‚¹‚é•K—v‚ª‚ ‚éB
+            // ï¿½ï¿½ï¿½Lï¿½Æuï¿½Û‘ï¿½ + ï¿½ï¿½ï¿½eï¿½ï¿½Êvï¿½Í•Ê‚Ìƒ{ï¿½^ï¿½ï¿½ï¿½É‚ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½ï¿½B
+            // ï¿½fï¿½Xï¿½Nï¿½gï¿½bï¿½vï¿½Ì‹ï¿½ï¿½Lï¿½Vï¿½[ï¿½gï¿½É‚ï¿½ X ï¿½ï¿½ï¿½ï¿½ï¿½Î‚È‚ï¿½ï¿½ï¿½ï¿½ßAï¿½Ð•ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æsï¿½ï¿½ï¿½~ï¿½Ü‚ï¿½É‚È‚ï¿½B
+            // ï¿½Ç‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½[ï¿½Uï¿½[ï¿½ÌƒNï¿½ï¿½ï¿½bï¿½Nï¿½Ì’ï¿½ï¿½ÅŠï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Kï¿½vï¿½ï¿½ï¿½ï¿½ï¿½ï¿½B
             var recommended = _screenRecorder.CanShareToApps;
             if (GUI.Button(new Rect(50 + buttonWidth * 3, buttonY, buttonWidth, buttonHeight),
                     recommended ? "SHARE *" : "SHARE"))
@@ -301,8 +303,8 @@ namespace CanvasRecorder.Samples
         }
 
         /// <summary>
-        /// “¯Šúƒ}[ƒJ[‚Ì”’ƒtƒ‰ƒbƒVƒ…BƒNƒŠƒbƒN‰¹‚Æ“¯‚¶ƒtƒŒ[ƒ€‚Åo‚·•K—v‚ª‚ ‚é‚½‚ßA
-        /// ‘¼‚Ì•`‰æ‚ð‚·‚×‚Ä‰B‚·‚æ‚¤‚ÉÅŒã‚É‘S‰æ–Ê‚Ö•`‚­B
+        /// ï¿½ï¿½ï¿½ï¿½ï¿½}ï¿½[ï¿½Jï¿½[ï¿½Ì”ï¿½ï¿½tï¿½ï¿½ï¿½bï¿½Vï¿½ï¿½ï¿½Bï¿½Nï¿½ï¿½ï¿½bï¿½Nï¿½ï¿½ï¿½Æ“ï¿½ï¿½ï¿½ï¿½tï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½Åoï¿½ï¿½ï¿½Kï¿½vï¿½ï¿½ï¿½ï¿½ï¿½é‚½ï¿½ßA
+        /// ï¿½ï¿½ï¿½Ì•`ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×‚Ä‰Bï¿½ï¿½ï¿½æ‚¤ï¿½ÉÅŒï¿½É‘Sï¿½ï¿½Ê‚Ö•`ï¿½ï¿½ï¿½B
         /// </summary>
         private void DrawSyncFlash(int width, int height)
         {
@@ -321,7 +323,7 @@ namespace CanvasRecorder.Samples
                 return;
             }
 
-            // “®‰æ‚ÌƒAƒXƒyƒNƒg”ä‚ð•Û‚Á‚½‚Ü‚Ü’†‰›‚ÉŽû‚ß‚éB
+            // ï¿½ï¿½ï¿½ï¿½ÌƒAï¿½Xï¿½yï¿½Nï¿½gï¿½ï¿½ï¿½Û‚ï¿½ï¿½ï¿½ï¿½Ü‚Ü’ï¿½ï¿½ï¿½ï¿½ÉŽï¿½ï¿½ß‚ï¿½B
             var area = new Rect(0, height * 0.06f, width, height * 0.68f);
             var scale = Mathf.Min(area.width / texture.width, area.height / texture.height);
             var drawWidth = texture.width * scale;
@@ -335,7 +337,7 @@ namespace CanvasRecorder.Samples
             GUI.Label(new Rect(20, 20, width - 40, height * 0.06f),
                 $"PREVIEW  {time:F1}s / {length:F1}s  ({texture.width}x{texture.height})");
 
-            // ƒV[ƒNƒo[Blength ‚ª 0 ‚Ì“®‰æiduration •s–¾j‚Å‚ÍƒV[ƒN‚Å‚«‚È‚¢B
+            // ï¿½Vï¿½[ï¿½Nï¿½oï¿½[ï¿½Blength ï¿½ï¿½ 0 ï¿½Ì“ï¿½ï¿½ï¿½iduration ï¿½sï¿½ï¿½ï¿½jï¿½Å‚ÍƒVï¿½[ï¿½Nï¿½Å‚ï¿½ï¿½È‚ï¿½ï¿½B
             var sliderRect = new Rect(20, height - height * 0.22f, width - 40, height * 0.05f);
             if (length > 0d)
             {

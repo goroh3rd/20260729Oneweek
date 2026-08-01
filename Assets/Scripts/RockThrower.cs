@@ -3,6 +3,7 @@ using UnityEngine.InputSystem;
 using System.Collections;
 using System.Collections.Generic;
 using unityroom.Api;
+using CanvasRecorder.Samples;
 
 public class RockThrower : MonoBehaviour
 {
@@ -17,6 +18,7 @@ public class RockThrower : MonoBehaviour
     [SerializeField] private AudioSource _throwSound;
     [SerializeField] private TimeKeeper _timeKeeper;
     [SerializeField] private ScoreShower _scoreShower;
+    [SerializeField] private Recorder _recorder;
     private IThrowable _currentThrowable;
     private Coroutine _throwCoroutine;
     public List<IThrowable> Throwables { get; private set; } = new List<IThrowable>();
@@ -121,6 +123,8 @@ public class RockThrower : MonoBehaviour
             {
                 _currentThrowable = null;
                 _timeKeeper.EndCastlePhase();
+                // 録画開始
+                _recorder.StartRecording();
                 _parabolaDrower.ClearTrajectory();
                 StartCoroutine(StartMeasureHeight(6f));
             }
@@ -151,6 +155,11 @@ public class RockThrower : MonoBehaviour
             elapsedTime += Time.deltaTime;
             yield return null;
         }
+
+        // 録画停止
+        _recorder.StopRecording();
+        _recorder.OpenPreview();
+
         float maxHeight = heightMeasure.MeasureMaxHeight(Throwables);
         float finalScore = Mathf.Max(maxHeight + 5f, 0f);
         Debug.Log("Max Height: " + finalScore);
