@@ -29,6 +29,34 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "Start",
+            "id": "1387030a-f993-46e0-a7f9-c1edddd37372",
+            "actions": [
+                {
+                    "name": "Start",
+                    "type": "Button",
+                    "id": "09ec83c9-2e0b-4b41-838d-eba514255b29",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "7f24f580-f6f1-4ea7-b46c-0bb86b058bb4",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Start",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []

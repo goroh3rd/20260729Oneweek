@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using System.Collections;
 using System.Collections.Generic;
+using unityroom.Api;
 
 public class RockThrower : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class RockThrower : MonoBehaviour
     [SerializeField] private ParabolaDrower _parabolaDrower;
     [SerializeField] private AudioSource _throwSound;
     [SerializeField] private TimeKeeper _timeKeeper;
+    [SerializeField] private ScoreShower _scoreShower;
     private IThrowable _currentThrowable;
     private Coroutine _throwCoroutine;
     public List<IThrowable> Throwables { get; private set; } = new List<IThrowable>();
@@ -28,7 +30,7 @@ public class RockThrower : MonoBehaviour
     }
     private void Update()
     {
-        if (_currentThrowable != null)
+        if (_currentThrowable != null && _parabolaDrower != null && (_timeKeeper.RockPhase || _timeKeeper.CastlePhase))
         {
             float angle = GetAngleToMouse();
             _parabolaDrower.DrawTrajectory(_currentThrowable.GetGameObject().transform.position, angle, _throwForce, _currentThrowable.GetGameObject().GetComponent<Rigidbody2D>().gravityScale);
@@ -118,6 +120,9 @@ public class RockThrower : MonoBehaviour
             else
             {
                 _currentThrowable = null;
+                _timeKeeper.EndCastlePhase();
+                _parabolaDrower.ClearTrajectory();
+                StartCoroutine(StartMeasureHeight(6f));
             }
         }
         else
@@ -126,11 +131,68 @@ public class RockThrower : MonoBehaviour
         }
         return _currentThrowable;
     }
+    private IEnumerator StartMeasureHeight(float delay)
+    {
+        HeightMeasure heightMeasure = new HeightMeasure();
+        CastleBehaviour castleTop = heightMeasure.FindCastleTop(Throwables) as CastleBehaviour;
+        Collider2D castleTopCollider = castleTop.GetCollider();
+        Rigidbody2D castleTopRigidbody = castleTop.GetRigidbody();
+
+        // yield return new WaitUntil(() => castleTopRigidbody.IsSleeping());
+        float elapsedTime = 0f;
+
+        while (elapsedTime < delay)
+        {
+            if (castleTopRigidbody.IsSleeping() || Mathf.Approximately(castleTopRigidbody.linearVelocity.magnitude, 0f))
+            {
+                Debug.Log("Castle top has settled.");
+                break; // Exit the loop if the Rigidbody is sleeping
+            }
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+        float maxHeight = heightMeasure.MeasureMaxHeight(Throwables);
+        float finalScore = Mathf.Max(maxHeight + 5f, 0f);
+        Debug.Log("Max Height: " + finalScore);
+        _scoreShower.ShowScore(finalScore);
+
+        UnityroomApiClient.Instance.SendScore(1, finalScore, ScoreboardWriteMode.HighScoreDesc);
+    }
     private float GetAngleToMouse()
     {
         Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
         Vector2 direction = mousePosition - (Vector2)transform.position;
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         return angle;
+    }
+}
+
+public class HeightMeasure
+{
+    public float MeasureMaxHeight(List<IThrowable> throwable)
+    {
+        IThrowable castleTop = FindCastleTop(throwable);
+        if (castleTop != null)
+        {
+            Collider2D castleTopCollider = castleTop.GetCollider();
+            float maxHeight = castleTopCollider.bounds.max.y;
+            return maxHeight;
+        }
+        return float.MinValue;
+    }
+    public IThrowable FindCastleTop(List<IThrowable> throwables)
+    {
+        foreach (IThrowable throwable in throwables)
+        {
+            if (throwable is CastleBehaviour castleBehaviour)
+            {
+                if (castleBehaviour.Part == CastleBehaviour.CastlePart.Top)
+                {
+                    return castleBehaviour;
+                }
+            }
+        }
+        Debug.LogWarning("No castle top found in the list of throwables.");
+        return null;
     }
 }

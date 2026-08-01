@@ -40,6 +40,11 @@ public class TimeKeeper : MonoBehaviour
     {
         CastlePhase = true;
     }
+    public void EndCastlePhase()
+    {
+        CastlePhase = false;
+        Debug.Log("Castle phase ended.");
+    }
     private IEnumerator DoWithDelay(float delay, System.Action action)
     {
         yield return new WaitForSeconds(delay);

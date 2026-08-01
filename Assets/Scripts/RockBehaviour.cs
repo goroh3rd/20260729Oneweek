@@ -10,6 +10,7 @@ public class RockBehaviour : MonoBehaviour, IThrowable, IGeneratable
     [SerializeField] private List<Sprite> _rockSprites;
     [SerializeField] private PhysicsMaterial2D _rockPhysicsMaterial;
     [SerializeField] private Rigidbody2D _rb;
+    [SerializeField] private AudioSource _audioSource;
     private PolygonCollider2D _polygonCollider;
     public void Init()
     {
@@ -53,6 +54,7 @@ public class RockBehaviour : MonoBehaviour, IThrowable, IGeneratable
             this._rb.linearVelocity = Vector2.zero;
             this._rb.angularVelocity = 0f;
             // _rb.bodyType = RigidbodyType2D.Kinematic;
+            if (this.gameObject.tag != "Ground") _audioSource.Play();
             this.tag = "Ground";
         }
     }
@@ -64,6 +66,8 @@ public class RockBehaviour : MonoBehaviour, IThrowable, IGeneratable
         _rb.AddForce(force, ForceMode2D.Impulse);
     }
     public GameObject GetGameObject() => gameObject;
+    public Collider2D GetCollider() => _polygonCollider;
+    public Rigidbody2D GetRigidbody() => _rb;
 
     private bool IsOnScene()
     {
