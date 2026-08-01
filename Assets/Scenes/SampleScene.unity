@@ -2489,7 +2489,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: c6d8bda21d5ce174c805513407be851e, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.709
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -5546,7 +5546,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ParabolaDrower
   _line: {fileID: 2094028687}
-  _pointCount: 40
+  _pointCount: 100
   _timeStep: 0.05
 --- !u!82 &2094028689
 AudioSource:
