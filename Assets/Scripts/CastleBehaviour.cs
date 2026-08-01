@@ -20,6 +20,8 @@ public class CastleBehaviour : MonoBehaviour, IThrowable, IGeneratable
 
     public void Init(int part)
     {
+        Part = (CastlePart)part;
+
         // Set SpriteRenderer properties
         _spriteRenderer.sprite = _castleSprites[part];
         _childSpriteRenderer.sprite = _spriteRenderer.sprite;
@@ -34,13 +36,13 @@ public class CastleBehaviour : MonoBehaviour, IThrowable, IGeneratable
         _rb.bodyType = RigidbodyType2D.Kinematic;
         _polygonCollider.enabled = false;
     }
-    private void Update()
-    {
-        if (!IsOnScene())
-        {
-            Destroy();
-        }
-    }
+    // private void Update()
+    // {
+    //     if (!IsOnScene())
+    //     {
+    //         Destroy();
+    //     }
+    // }
     // void FixedUpdate()
     // {
     //     _rb.angularVelocity *= 0.95f;
@@ -49,8 +51,8 @@ public class CastleBehaviour : MonoBehaviour, IThrowable, IGeneratable
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
-            this._rb.linearVelocity = Vector2.zero;
-            this._rb.angularVelocity = 0f;
+            // this._rb.linearVelocity = Vector2.zero;
+            // this._rb.angularVelocity = 0f;
             // _rb.bodyType = RigidbodyType2D.Kinematic;
             if (this.gameObject.tag != "Ground") _audioSource.Play();
             this.tag = "Ground";
@@ -64,6 +66,8 @@ public class CastleBehaviour : MonoBehaviour, IThrowable, IGeneratable
         _rb.AddForce(force, ForceMode2D.Impulse);
     }
     public GameObject GetGameObject() => gameObject;
+    public Collider2D GetCollider() => _polygonCollider;
+    public Rigidbody2D GetRigidbody() => _rb;
 
     private bool IsOnScene()
     {

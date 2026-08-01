@@ -66,6 +66,8 @@ public class RockBehaviour : MonoBehaviour, IThrowable, IGeneratable
         _rb.AddForce(force, ForceMode2D.Impulse);
     }
     public GameObject GetGameObject() => gameObject;
+    public Collider2D GetCollider() => _polygonCollider;
+    public Rigidbody2D GetRigidbody() => _rb;
 
     private bool IsOnScene()
     {

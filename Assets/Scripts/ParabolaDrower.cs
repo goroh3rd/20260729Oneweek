@@ -31,4 +31,8 @@ public class ParabolaDrower : MonoBehaviour
             line.SetPosition(i, pos);
         }
     }
+    public void ClearTrajectory()
+    {
+        line.positionCount = 0;
+    }
 }
