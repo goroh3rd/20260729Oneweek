@@ -15,6 +15,7 @@ public class RockThrower : MonoBehaviour
     [SerializeField] private ParabolaDrower _parabolaDrower;
     [SerializeField] private AudioSource _throwSound;
     [SerializeField] private TimeKeeper _timeKeeper;
+    [SerializeField] private ScoreShower _scoreShower;
     private IThrowable _currentThrowable;
     private Coroutine _throwCoroutine;
     public List<IThrowable> Throwables { get; private set; } = new List<IThrowable>();
@@ -120,7 +121,7 @@ public class RockThrower : MonoBehaviour
                 _currentThrowable = null;
                 _timeKeeper.EndCastlePhase();
                 _parabolaDrower.ClearTrajectory();
-                StartCoroutine(StartMeasureHeight(10f));
+                StartCoroutine(StartMeasureHeight(6f));
             }
         }
         else
@@ -151,6 +152,7 @@ public class RockThrower : MonoBehaviour
         }
         float maxHeight = heightMeasure.MeasureMaxHeight(Throwables);
         Debug.Log("Max Height: " + Mathf.Max(maxHeight + 5f, 0f));
+        _scoreShower.ShowScore(Mathf.Max(maxHeight + 5f, 0f));
     }
     private float GetAngleToMouse()
     {
