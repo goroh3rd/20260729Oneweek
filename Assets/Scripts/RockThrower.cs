@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using System.Collections;
 using System.Collections.Generic;
+using unityroom.Api;
 
 public class RockThrower : MonoBehaviour
 {
@@ -151,8 +152,11 @@ public class RockThrower : MonoBehaviour
             yield return null;
         }
         float maxHeight = heightMeasure.MeasureMaxHeight(Throwables);
-        Debug.Log("Max Height: " + Mathf.Max(maxHeight + 5f, 0f));
-        _scoreShower.ShowScore(Mathf.Max(maxHeight + 5f, 0f));
+        float finalScore = Mathf.Max(maxHeight + 5f, 0f);
+        Debug.Log("Max Height: " + finalScore);
+        _scoreShower.ShowScore(finalScore);
+
+        UnityroomApiClient.Instance.SendScore(1, finalScore, ScoreboardWriteMode.HighScoreDesc);
     }
     private float GetAngleToMouse()
     {
