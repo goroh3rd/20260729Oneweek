@@ -113,6 +113,11 @@ namespace CanvasRecorder.Samples
 
         private void Update()
         {
+            // テクスチャを更新
+            if (_screenRecorder.HasRecording)
+            {
+                previewImage.texture = _recordingPreview.Texture;
+            }
             /*
             if (Input.GetKeyDown(KeyCode.Space))
             {
@@ -128,10 +133,6 @@ namespace CanvasRecorder.Samples
                 }
             }
 
-            if (_screenRecorder.HasRecording)
-            {
-                previewImage.texture = _recordingPreview.Texture;
-            }
 
             if (_screenRecorder.IsRecording)
             {

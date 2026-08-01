@@ -69,6 +69,8 @@ namespace CanvasRecorder
             _videoPlayer.audioOutputMode = VideoAudioOutputMode.Direct;
             _videoPlayer.isLooping = true;
             _videoPlayer.skipOnDrop = true;
+            // とりあえずミュート
+            _videoPlayer.SetDirectAudioMute(0, true);
             _videoPlayer.prepareCompleted += OnPrepareCompleted;
             _videoPlayer.errorReceived += OnErrorReceived;
         }
