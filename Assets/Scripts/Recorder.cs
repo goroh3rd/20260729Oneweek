@@ -151,12 +151,13 @@ namespace CanvasRecorder.Samples
 
         IEnumerator OpenPreviewPanel()
         {
-            while (!_screenRecorder.HasRecording)
-            {
-                yield return null; // Wait until a recording is available
-            }
+            while (!_screenRecorder.HasRecording) yield return null;
+
             _previewError = null;
-            _recordingPreview.Open();
+            if (!_recordingPreview.Open()) yield break;
+
+            while (!_recordingPreview.IsOpen) yield return null;
+            previewImage.texture = _recordingPreview.Texture;
             previewPanel.SetActive(true);
         }
 

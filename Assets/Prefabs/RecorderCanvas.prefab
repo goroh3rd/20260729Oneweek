@@ -357,6 +357,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _screenRecorder: {fileID: 7486448773454075604}
+  _volume: 0
 --- !u!114 &2940997916824526339
 MonoBehaviour:
   m_ObjectHideFlags: 0
